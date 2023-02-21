@@ -10,11 +10,11 @@ type StoreItemProps = {
     imgUrl: string
 }
 
-export function Storeitem({ id, name, price, imgUrl }: StoreItemProps) {
+export function StoreItem({ id, name, price, imgUrl }: StoreItemProps) {
     const {
         getItemQuantity,
-        increaseCartQuantitiy,
-        decreaseCartQuantitiy,
+        increaseCartQuantity,
+        decreaseCartQuantity,
         removeFromCart,
     } = useShoppingCart()
 
@@ -39,7 +39,7 @@ export function Storeitem({ id, name, price, imgUrl }: StoreItemProps) {
                     {quantity === 0 ? (
                         <Button
                             className="w-100"
-                            onClick={() => increaseCartQuantitiy(id)}
+                            onClick={() => increaseCartQuantity(id)}
                         >
                             + Add to Cart
                         </Button>
@@ -53,7 +53,7 @@ export function Storeitem({ id, name, price, imgUrl }: StoreItemProps) {
                                 style={{ gap: ".5rem" }}
                             >
                                 <Button
-                                    onClick={() => decreaseCartQuantitiy(id)}
+                                    onClick={() => decreaseCartQuantity(id)}
                                 >
                                     -
                                 </Button>
@@ -62,7 +62,7 @@ export function Storeitem({ id, name, price, imgUrl }: StoreItemProps) {
                                     cart
                                 </div>
                                 <Button
-                                    onClick={() => increaseCartQuantitiy(id)}
+                                    onClick={() => increaseCartQuantity(id)}
                                 >
                                     +
                                 </Button>
